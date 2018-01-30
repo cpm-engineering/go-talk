@@ -15,13 +15,13 @@ released in 2012
 * Available on all major platforms (Linux, Windows, Darwin, BSD, available on
   mobile devices since 2015)
 
-----
+---
 #### Tools && Ecosystem
 
 `gofmt` -
 
 
-++++
+---
 
 Go structures instead of Objects.
 
