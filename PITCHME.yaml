@@ -1,3 +1,4 @@
 theme: moon
 logo: assets/adidas.png
+theme-override: assets/PITCHME.css
 highlight: solarized-dark
