@@ -1,5 +1,5 @@
 @title[Introduction]
-## Adidas CPM Engineering Go intro - by Victor Palade
+## /// CPM Engineering - Introduction to Go
 ---
 
 #### Go(lang)
@@ -14,5 +14,3 @@
 * Open source (all the tools including the programming language itself)
 * Available on all major platforms (Linux, Windows, Darwin, BSD, available on
   mobile devices since 2015)
-
-theme: moon
