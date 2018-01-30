@@ -1,3 +1,8 @@
 .reveal h1, h2, h3, {
   font-size: 21px;
 }
+
+.reveal section img {
+  border: 0;
+  box-shadow: none;
+}
