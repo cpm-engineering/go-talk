@@ -1,3 +1,6 @@
+.reveal h1 {
+  font-size: 21px;
+}
 .reveal li {
   font-size: 21px;
 }
@@ -6,7 +9,7 @@
   box-shadow: none;
 }
 
-.lang-go {
+.reveal .code .lang-go {
   font-size: 18px;
   line-height: 12px;
 }
