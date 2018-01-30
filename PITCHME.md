@@ -19,7 +19,7 @@ released in 2012
 #### Tools && Ecosystem
 
 `gofmt` -
-
+`dep` -
 
 ---
 
