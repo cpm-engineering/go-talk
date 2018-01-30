@@ -21,7 +21,7 @@ released in 2012
 `gofmt` -
 
 
-----
+++++
 
 Go structures instead of Objects.
 
