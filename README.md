@@ -1,2 +1,1 @@
-# go_talk
-Go talk slides for CPM Engineering @ Adidas.
+An introduction to Go for CPM Engineering dept.
