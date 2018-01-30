@@ -1,9 +1,7 @@
-CPM Engineering
+Adidas CPM Engineering
 ---
 
-#### About Go(lang)
-
-![alt text](./assets/gopher.png "Gopher")
+#### About Go(lang) by Victor Palade
 
 * Created at Google by (Rob Pike, Ken Thompson, Robert Griesemer) since 2009.
 (released in 2012)
@@ -13,3 +11,4 @@ CPM Engineering
 * Open source (all the tools including the programming language itself)
 * Available on all major platforms (Linux, Windows, Darwin, BSD, available on
   mobile devices since 2015)
+  ![alt text](./assets/gopher.png "Gopher")
