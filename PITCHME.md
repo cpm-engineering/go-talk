@@ -142,18 +142,14 @@ func returnFunc(testFunc func() error) func() error {
 Channels and goroutines  
 Share by communicating as opposed to communicate by sharing
 ```go
-
-```
----
-Executing anonymous functions in a concurrent way
-```go
+ch := make(chan int)
 go func() {
-  fmt.Println("This runs inside a goroutine")
-}
-
+  ch <- 1
+}()
+fmt.Println(<-ch)
 ```
 ---
-#### Special mentions
+#### Honorable mentions
 ---
 ```go
 file, err := os.Open('localFile')
@@ -162,19 +158,26 @@ defer file.Close()
 ---
 init() Functionality
 ```go
-init(
+func main() {
 
+}
+
+init(
+  viper.SetConfigFile(".shep")
+  viper.SetConfigType("json")
+  logrus.SetLevel(logrus.DebugLevel)
 )
 ```
 ---
-Context package
+Context package (cancelation and pipelines)
 ```go
 import (
   "context"
 )
+
 ```
 ---
-Slices  
+Slices are not arrays
 ```go
 slice = []string{
   'tes1',
