@@ -44,7 +44,7 @@ var unusedVar string
 func main() {}
 ```
 ---
-* Each file must be run through gofmt or sayisfy gofmt constraints before
+* Each file must be run through gofmt or satisfy gofmt constraints before
 compilation
 * gofmt will use builtin spacing and some minimal code 'linting'
 ---
@@ -70,9 +70,9 @@ value, _ := somFunc()
 ---
 #### Standard library
 ---
-Out of the box support for
-https://golang.org/pkg/
-special mention: builtin support for html templating
+Out of the box support for  
+https://golang.org/pkg/   
+special mention: builtin support for html templating  
 ---
 #### The language
 ---
@@ -97,8 +97,8 @@ func(d *demo) getID() int {
 }
 ```
 ---
-Encoding/decoding is aided by struct tags (xml, json, bson)
-https://github.com/golang/go/wiki/Well-known-struct-tags
+Encoding/decoding is aided by struct tags (xml, json, bson)  
+https://github.com/golang/go/wiki/Well-known-struct-tags  
 Meta-information available via the reflect package.
 
 ```go
@@ -131,7 +131,7 @@ fakeFunc := func() error {
 
 func returnFunc(testFunc func() error) func() error {
   return func() error {
-    if err :=
+    if err := testFunc()
     return nil
   }
 }
@@ -139,7 +139,7 @@ func returnFunc(testFunc func() error) func() error {
 ---
 #### Concurrency primitives
 ---
-Channels and goroutines
+Channels and goroutines  
 Share by communicating as opposed to communicate by sharing
 ```go
 
@@ -148,7 +148,7 @@ Share by communicating as opposed to communicate by sharing
 Executing anonymous functions in a concurrent way
 ```go
 go func() {
-
+  fmt.Println("This runs inside a goroutine")
 }
 
 ```
@@ -172,4 +172,13 @@ Context package
 import (
   "context"
 )
+```
+---
+Slices  
+```go
+slice = []string{
+  'tes1',
+  'test2',
+  'test3',
+}
 ```
