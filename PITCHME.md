@@ -26,21 +26,55 @@ released in 2012
 * `vet` - Vet examines Go source code and reports suspicious constructs, such as Printf calls whose arguments do not align with the format string.  
 ---
 #### Popular Go projects
-Moby (Docker) , Kubernetes, OpenShift, Terraform, Packer, Consul, etcd, Prometheus, CRI-O, rkt.  
+Moby (Docker), Kubernetes, OpenShift, Terraform, Packer, Consul, etcd, Prometheus, CRI-O, rkt.  
 giantswarm (our current kubernetes infra is managed and run with Go apps).
 
 ---
-Language quirks
-
+#### Language quirks (Pedantic Go)
+---
 ```go
-// declaring multiline variables with types, type inferred or with default
-// values.
+// Can not compile a program with unused variables
+// or unused imports
+import (
+  "net/http"
+)
+
+var unusedVar string
+
+func main() {}
+```
+---
+* Each file must be run through gofmt or sayisfy gofmt constraints before
+compilation
+* gofmt will use builtin spacing and some minimal code 'linting'
+---
+```go
+// declaring multiline variables with types, type inferred
+// or with default values.
 var (
 	test            string
 	intTest         int = 0
 	testDefault     = "test"
 )
 ```
+---
+Each error must be handled
+```go
+value, err := someFunc()
+if err != nil {
+  return err
+}
+// ignore the error returned - doable, but discouraged
+value, _ := somFunc()
+```
+---
+#### Standard library
+---
+Out of the box support for
+https://golang.org/pkg/
+special mention: builtin support for html templating
+---
+#### The language
 ---
 Go structures instead of Objects.
 
@@ -63,3 +97,79 @@ func(d *demo) getID() int {
 }
 ```
 ---
+Encoding/decoding is aided by struct tags (xml, json, bson)
+https://github.com/golang/go/wiki/Well-known-struct-tags
+Meta-information available via the reflect package.
+
+```go
+type Payload struct {
+  Response int `json:"response,omitempty"`
+}
+```
+---
+Types satisfy an interface (automatically) when they contain
+at least all defined methods of that interface.
+```Go
+type Service interface {
+  Start()
+  Stop()
+}
+
+type networkService struct {}
+func(n *networkService) Start() {}
+func(n *networkService) Stop() {}
+```
+---
+Functions as first class citizens  
+
+```go
+type CmdFunc func(ctx context.Context) error
+
+fakeFunc := func() error {
+  return nil
+}
+
+func returnFunc(testFunc func() error) func() error {
+  return func() error {
+    if err :=
+    return nil
+  }
+}
+```
+---
+#### Concurrency primitives
+---
+Channels and goroutines
+Share by communicating as opposed to communicate by sharing
+```go
+
+```
+---
+Executing anonymous functions in a concurrent way
+```go
+go func() {
+
+}
+
+```
+---
+#### Special mentions
+---
+```go
+file, err := os.Open('localFile')
+defer file.Close()
+```
+---
+init() Functionality
+```go
+init(
+
+)
+```
+---
+Context package
+```go
+import (
+  "context"
+)
+```
